@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>{{ page.title }}</title>
+    <title>Git merge vs. rebase</title>
     <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
     <link type="text/css" rel="stylesheet" href="/syntax.css" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/Tigraine?format=xml" />
@@ -39,7 +39,192 @@
         </h1>
         <div id="wrapper">
             <div id="content">
-                {{content}}
+                <div class="post">
+    <!-- This is the posts header text -->
+    <h2>
+        <a href="/merge-vs-rebase" rel="bookmark" title="Git merge vs. rebase">Git merge vs. rebase</a></h2>
+    <!-- This is the date and author -->
+    <small>February 20, 2013 by Daniel Hoelbling</small>
+    <div class="entry">
+        <h2 id="the-short">The short:</h2>
+
+<ul>
+  <li>
+    <p><code>git pull --rebase</code> instead of <code>git pull</code></p>
+  </li>
+  <li>
+    <p><code>git rebase -i @{u}</code> before <code>git push</code></p>
+  </li>
+  <li>
+    <p><i>(on “feature”)</i> <code>git merge master</code> to make feature compatible with
+latest master</p>
+  </li>
+  <li>
+    <p><i>(on “master”)</i> <code>git merge --no-ff feature</code> to ship a feature</p>
+
+    <p>However if “feature” contains only 1 commit, avoid the merge commit:<br />
+<i>(on “master”)</i> <code>git cherry-pick feature</code></p>
+  </li>
+</ul>
+
+<h2 id="the-long">The long:</h2>
+
+<p><i>
+  If you enjoy this post, check out my
+  <a href="#">git tips you didn’t know about</a>!
+</i></p>
+
+<h3 id="avoid-merge-commits-that-result-from-git-pull">Avoid merge commits that result from <code>git pull</code></h3>
+
+<p>When you want to push your changes to a branch, but someone else already pushed
+before you, you have to pull in their changes first. Normally, git does a merge
+commit in that situation.</p>
+
+<p>Such merge commits can be numerous, especially between a team of people who push
+their changes often. <strong>Those merges convey no useful information to others, and
+litter the project’s history.</strong></p>
+
+<p>You should always pull with <code>git pull --rebase</code>. Git can be configured to make
+it the default behavior:</p>
+
+<pre>git config --global --bool <em>pull.rebase</em> true</pre>
+
+<h3 id="interactively-rebase-local-commits-before-pushing">Interactively rebase local commits before pushing</h3>
+
+<p>Run this every time before pushing a set of commits:</p>
+
+<pre>git rebase <em>-i @{u}</em></pre>
+
+<p>The “u” stands for “upstream” (added in git v1.7.0), and it resolves to the
+latest commit on this branch on the remote. Putting it simply,
+<strong>this command rewrites only the local commits which you’re about the push.</strong>
+<ins>Starting in git v1.7.6, <code>@{upstream}</code> is the default for when there is no
+argument.</ins></p>
+
+<p>This gives you a chance to perform basic housekeeping before sharing your
+changes, such as <em>squashing related commits</em> together and <em>rewording commit
+messages</em> if they’re too long or not descriptive enough.</p>
+
+<p>Suppose you have a set of 4 commits (newest first):</p>
+
+<pre>[D] oops! <em>fixed typo</em> in feature A
+[C] <em>bugfix</em> for change B
+<em>[B]</em> another change
+<em>[A]</em> yay new feature!</pre>
+
+<p>You definitely want to squash A+D and B+C together, while still keeping A and B
+separate. The philosophy behind this is: don’t make bugs or typos a part of
+your project’s history if you haven’t shared them yet.</p>
+
+<h3 id="integrate-changes-from-master-into-a-feature-branch-with-merge">Integrate changes from master into a feature branch with merge</h3>
+
+<p>If you’re working on a long-lived feature branch, it pays off to sometimes merge
+in the master branch (assuming “master” is the main development branch) to
+verify that they are compatible and to get the latest bug fixes.</p>
+
+<p>You could also rebase the current branch on top of master, but the rebase has
+shortcomings:</p>
+
+<ul>
+  <li>If multiple people work on the feature, rewriting history complicates their
+workflow.</li>
+  <li>Merge conflicts can be easier to deal with during merge than the more
+numerous, smaller conflicts during rebase.</li>
+</ul>
+
+<h3 id="record-a-merge-commit-when-a-feature-lands-into-master">Record a merge commit when a feature lands into master</h3>
+
+<p>After working on a feature/topic branch, merge it in master like so:</p>
+
+<pre>git merge <em>--no-ff</em> feature</pre>
+
+<p>The <code>--no-ff</code> flag <strong>ensures there will always be a merge commit</strong>, even when
+technically not necessary. Merge commits are useful because they convey the
+following information:</p>
+
+<ul>
+  <li><strong>where</strong> do changes come from (in this case: the “feature” branch);</li>
+  <li><strong>when</strong> were the changes merged and <strong>by whom</strong>, possibly indicating a
+code review (if that’s part of your development process);</li>
+  <li>keeps commits related to this feature/topic <strong>grouped together</strong>.</li>
+</ul>
+
+<p>Sometimes a topic branch will consist only of a single commit, especially for
+bug fixes. When merging it in, I often <strong>decide not to record the merge commit</strong>
+for a single commit because that merge information is less useful to the team:</p>
+
+<ul>
+  <li><em>where</em> changes come from is irrelevant, because the branch was likely
+short-lived, so people in the team haven’t developed familiarity with it;</li>
+  <li><em>when</em> is already recorded in the commit itself as committer timestamp;</li>
+  <li>there’s nothing to <em>group</em> together.</li>
+</ul>
+
+<p>You can pull in a single commit to master like so:</p>
+
+<pre>git <em>cherry-pick</em> feature</pre>
+
+    </div>
+    <p class="postmetadata">
+        <a href="/merge-vs-rebase#comments"
+            title="Comment on Git merge vs. rebase"><span
+                class="dsq-postid" rel=" http://www.tigraine.at/merge-vs-rebase/">View
+                Comments</span> </a>
+    </p>
+
+    <!-- Disqus Comment System -->
+    <a name="comments" />
+    <div id="disqus_thread">
+        <div id="dsq-content">
+        </div>
+    </div>
+    <ul id="dsq-comments">
+    </ul>
+    <script type="text/javascript">
+        var disqus_url = 'http://www.tigraine.at/merge-vs-rebase/ ';
+        var disqus_identifier = ' http://www.tigraine.at/merge-vs-rebase/';
+        var disqus_container_id = 'disqus_thread';
+        var disqus_domain = 'disqus.com';
+        var disqus_shortname = 'tigraine';
+        var disqus_title = "Git merge vs. rebase";
+        var disqus_config = function () {
+            var config = this; // Access to the config object
+
+            /* 
+            All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+            */
+
+            config.callbacks.preData.push(function () {
+                // clear out the container (its filled for SEO/legacy purposes)
+                document.getElementById(disqus_container_id).innerHTML = '';
+            });
+            config.callbacks.onReady.push(function () {
+                // sync comments in the background so we don't block the page
+                DISQUS.request.get('?cf_action=sync_comments&post_id=956');
+            });
+        };
+    </script>
+    <script type="text/javascript">
+        var DsqLocal = {
+            'trackbacks': [],
+        };
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.' + disqus_domain + '/embed.js?pname=wordpress&pver=2.50';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <!-- End of Disqus Comment System -->
+</div>
+
                 <br />
                 <br />
             </div>

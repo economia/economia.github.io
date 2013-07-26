@@ -1,52 +1,19 @@
 ---
-title: Mislav Marohnić
-description: >
-  The Internet home of Mislav:
-  writer, developer, photographer.
 layout: default
+title: Tigraine - Daniel Hoelbling
 ---
 
-<h1>{{ page.title }}</h1>
+{% for post in site.posts limit:10 %}
+<div class="post">
+	<h2><a href=".{{post.url}}" rel="bookmark" title="{{post.title}}">{{post.title}}</a></h2>
+	<small>{{post.date | date: "%B %d, %Y"}} by Daniel Hoelbling</small>
 
-<div id=description class=vcard>
-  <p>
-    <img src="/images/mislav.jpg" alt="Mislav Marohnić" class="fn photo" lang=hr>
-    A <span class=title>software craftsman</span> from
-    <span class=adr><span class=country-name>Croatia</span>, Europe</span>.<br>
-    <a class=email href="mailto:mislav.marohnic@gmail.com">mislav.marohnic@gmail.com</a>
-  </p>
-  <p>
-    The best way to get to know me:
-  </p>
-  <ul>
-    <li>I <a href="/blog/">write</a></li>
-    <li>I <a href="/instapaper/" title="Mislav's Instapaper liked items">read</a></li>
-    <li>I tweet:
-      @<a rel=me href="http://twitter.com/mislav">mislav</a>,
-      +<a rel=me href="https://plus.google.com/110653988851642886880">Mislav</a>
-    </li>
-    <li>I do photography:
-      <a rel=me href="http://www.flickr.com/photos/mislav-marohnic/" title="Mislav's photos on Flickr">Flickr</a>,
-      <a rel=me href="http://instagram.heroku.com/users/mislav" title="Mislav's Instagram photo stream">Instagram</a>
-    </li>
-  </ul>
+	<div class="entry">
+		{{post.content}}
+	</div>
+	<p class="postmetadata">
+		<a href="{{post.id}}/#comments" title="Comment on {{page.title}}">
+			View Comments</a>
+	</p>
 </div>
-
-<h2>Latest blog post:</h2>
-
-<section class="posts hfeed">
-{% for post in site.posts %}
-  {% unless post.link or rendered_one %}
-  <article class="hentry">
-    <header>
-      <h2 class=entry-title><a rel=bookmark href="{{ post.url }}">{{ post.title }}</a></h2>
-      <time datetime="{{ post.date | date_to_xmlschema }}" class=published pubdate>{{ post.date | date_to_string }}</time>
-    </header>
-    {% if page.description %}<p class=entry-summary>{{ post.description }}</p>{% endif %}
-  </article>
-  {% assign rendered_one = true %}
-  {% endunless %}
 {% endfor %}
-
-  <nav><a class="home" href="/blog/">→ All blog posts</a></nav>
-</section>

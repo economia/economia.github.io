@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>{{ page.title }}</title>
+    <title>Terminal control sequences</title>
     <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
     <link type="text/css" rel="stylesheet" href="/syntax.css" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/Tigraine?format=xml" />
@@ -39,7 +39,167 @@
         </h1>
         <div id="wrapper">
             <div id="content">
-                {{content}}
+                <div class="post">
+    <!-- This is the posts header text -->
+    <h2>
+        <a href="/control-maps" rel="bookmark" title="Terminal control sequences">Terminal control sequences</a></h2>
+    <!-- This is the date and author -->
+    <small>July 12, 2013 by Daniel Hoelbling</small>
+    <div class="entry">
+        <p>Using many control keys during the day, such as <kbd>Ctrl-f</kbd> to page down
+in Vim and <kbd>Ctrl-c</kbd> to kill a process in terminal, and <a href="https://coderwall.com/p/rwmdvq" title="Seamlessly navigate tmux and Vim splits">assigning some
+of my own</a> to tmux, I’ve began wondering whether all the letters of the
+alphabet were accounted for. The answer is: yes, they are; plus even some extra
+characters.</p>
+
+<p>Most key bindings differ depending on the context, except ones in the “term”
+column that always keep the same function. The layers that I’m most interested
+in are:</p>
+
+<ul>
+  <li><strong>the shell</strong> (bash/zsh with Emacs key bindings), where I edit commands and
+browse history;</li>
+  <li><strong>process control</strong> while running a process attached to the terminal;</li>
+  <li><strong>Vim</strong>, which I use exclusively in the terminal.</li>
+</ul>
+
+<p>I have compiled a comprehensive overview of all control key bindings in different
+contexts and highlighted the features that matter to me the most:</p>
+
+<p>&lt;table class=split&gt;</p>
+<thead>
+<tr><th>                 </th><th> term  </th><th> shell prompt               </th><th> process           </th><th> Vim normal</th></tr>
+</thead>
+<tr><th><kbd>C-A</kbd>   </th><td>       </td><td><strong> start of line</strong>              </td><td>                   </td><td><strong>increment number</strong></td></tr>
+<tr><th><kbd>C-B</kbd>   </th><td>       </td><td> move back a char           </td><td>                   </td><td><strong> page up</strong></td></tr>
+<tr><th><kbd>C-C</kbd>   </th><td>       </td><td>                            </td><td> SIGINT            </td><td></td></tr>
+<tr><th><kbd>C-D</kbd>   </th><td>       </td><td> delete char                </td><td> send EOF          </td><td> half page down</td></tr>
+<tr><th><kbd>C-E</kbd>   </th><td>       </td><td><strong> end of line</strong>                </td><td>                   </td><td> scroll up</td></tr>
+<tr><th><kbd>C-F</kbd>   </th><td>       </td><td> move forward a char        </td><td>                   </td><td><strong> page down</strong></td></tr>
+<tr><th><kbd>C-G</kbd>   </th><td>       </td><td> abort line                 </td><td>                   </td><td> file/position info</td></tr>
+<tr><th><kbd>C-H</kbd>   </th><td> &lt;Bsp&gt; </td><td>                            </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-I</kbd>   </th><td> &lt;Tab&gt; </td><td>                            </td><td>                   </td><td> jump forward</td></tr>
+<tr><th><kbd>C-J</kbd>   </th><td> &lt;LF&gt;  </td><td>                            </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-K</kbd>   </th><td>       </td><td> kill text to end of line   </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-L</kbd>   </th><td>       </td><td> clear screen               </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-M</kbd>   </th><td> &lt;CR&gt;  </td><td>                            </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-N</kbd>   </th><td>       </td><td> next history               </td><td>                   </td><td> move cursor down</td></tr>
+<tr><th><kbd>C-O</kbd>   </th><td>       </td><td> operate-and-get-next       </td><td>                   </td><td><strong> jump back</strong></td></tr>
+<tr><th><kbd>C-P</kbd>   </th><td>       </td><td> previous history           </td><td>                   </td><td> move cursor up</td></tr>
+<tr><th><kbd>C-Q</kbd>   </th><td>       </td><td> zsh: clear line            </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-R</kbd>   </th><td>       </td><td><strong> backward inc. search</strong>        </td><td>                   </td><td> redo</td></tr>
+<tr><th><kbd>C-S</kbd>   </th><td>       </td><td><strong> forward inc. search*</strong>         </td><td>                   </td><td></td></tr>
+<tr><th><kbd>C-T</kbd>   </th><td>       </td><td> transpose chars            </td><td> SIGINFO           </td><td> undo tag jump</td></tr>
+<tr><th><kbd>C-U</kbd>   </th><td>       </td><td> clear line                 </td><td>                   </td><td> half page up</td></tr>
+<tr><th><kbd>C-V</kbd>   </th><td>       </td><td> insert next char literally </td><td>                   </td><td> visual block mode</td></tr>
+<tr><th><kbd>C-W</kbd>   </th><td>       </td><td><strong> delete word</strong>                </td><td>                   </td><td> window prefix</td></tr>
+<tr><th><kbd>C-X</kbd>   </th><td>       </td><td> prefix, e.g. C-x,C-e       </td><td>                   </td><td><strong>decrement number</strong></td></tr>
+<tr><th><kbd>C-Y</kbd>   </th><td>       </td><td> yank                       </td><td> (delayed suspend) </td><td> scroll down</td></tr>
+<tr><th><kbd>C-Z</kbd>   </th><td>       </td><td>                            </td><td><strong> SIGTSTP (suspend)</strong> </td><td></td></tr>
+<tr><th><kbd>C-\</kbd>   </th><td>       </td><td>                            </td><td> SIGQUIT           </td><td></td></tr>
+<tr><th><kbd>C-[</kbd>   </th><td> &lt;Esc&gt; </td><td>                            </td><td>                   </td><td> exit insert mode</td></tr>
+<tr><th><kbd>C-]</kbd>   </th><td>       </td><td>                            </td><td>                   </td><td><strong> jump to tag</strong></td></tr>
+<tr><th><kbd>C-^</kbd>   </th><td>       </td><td>                            </td><td>                   </td><td><strong> alternate buffer</strong></td></tr>
+<p>&lt;/table&gt;</p>
+
+<p>In the shell, these are indispensable:</p>
+
+<ul>
+  <li><kbd>C-r</kbd> - Backward incremental search through history</li>
+  <li><kbd>C-s</kbd> - Forward incremental search</li>
+</ul>
+
+<p><ins>*For bash, <code>C-s</code> <a href="http://unix.stackexchange.com/a/12146/28595" title="How to unfreeze after accidentally pressing Ctrl-S in a terminal?">doesn’t work by default</a>.
+Here’s how to enable it:</ins></p>
+
+<pre><code># Allow &lt;C-s&gt; to pass through to shell and programs
+stty -ixon -ixoff
+</code></pre>
+
+<p>For process control:</p>
+
+<ul>
+  <li><kbd>C-z</kbd> - Suspend a process. Useful for switching away from a man page
+or Vim while keeping the option to return to it intact.</li>
+  <li><kbd>fg</kbd> (shell) - Return a process to foreground</li>
+  <li><kbd>jobs</kbd> (shell) - List suspended processes</li>
+</ul>
+
+<p>In Vim:</p>
+
+<ul>
+  <li><kbd>C-f/b</kbd> - Page down/up</li>
+  <li><kbd>C-a/x</kbd> - Increment/decrement the number after cursor.
+Can’t do CSS without it!</li>
+  <li><kbd>C-]</kbd> - Jump to tag under cursor</li>
+  <li><kbd>C-o</kbd> - Backtrack after having jumped</li>
+</ul>
+
+<p>To learn more about navigating tags and jumps in Vim, see
+<a href="http://mislav.uniqpath.com/2011/12/vim-revisited/">Vim: Revisited</a>.</p>
+
+
+    </div>
+    <p class="postmetadata">
+        <a href="/control-maps#comments"
+            title="Comment on Terminal control sequences"><span
+                class="dsq-postid" rel=" http://www.tigraine.at/control-maps/">View
+                Comments</span> </a>
+    </p>
+
+    <!-- Disqus Comment System -->
+    <a name="comments" />
+    <div id="disqus_thread">
+        <div id="dsq-content">
+        </div>
+    </div>
+    <ul id="dsq-comments">
+    </ul>
+    <script type="text/javascript">
+        var disqus_url = 'http://www.tigraine.at/control-maps/ ';
+        var disqus_identifier = ' http://www.tigraine.at/control-maps/';
+        var disqus_container_id = 'disqus_thread';
+        var disqus_domain = 'disqus.com';
+        var disqus_shortname = 'tigraine';
+        var disqus_title = "Terminal control sequences";
+        var disqus_config = function () {
+            var config = this; // Access to the config object
+
+            /* 
+            All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+            */
+
+            config.callbacks.preData.push(function () {
+                // clear out the container (its filled for SEO/legacy purposes)
+                document.getElementById(disqus_container_id).innerHTML = '';
+            });
+            config.callbacks.onReady.push(function () {
+                // sync comments in the background so we don't block the page
+                DISQUS.request.get('?cf_action=sync_comments&post_id=956');
+            });
+        };
+    </script>
+    <script type="text/javascript">
+        var DsqLocal = {
+            'trackbacks': [],
+        };
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.' + disqus_domain + '/embed.js?pname=wordpress&pver=2.50';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <!-- End of Disqus Comment System -->
+</div>
+
                 <br />
                 <br />
             </div>

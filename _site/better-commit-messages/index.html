@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>{{ page.title }}</title>
+    <title>Better commit messages</title>
     <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
     <link type="text/css" rel="stylesheet" href="/syntax.css" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/Tigraine?format=xml" />
@@ -39,7 +39,86 @@
         </h1>
         <div id="wrapper">
             <div id="content">
-                {{content}}
+                <div class="post">
+    <!-- This is the posts header text -->
+    <h2>
+        <a href="/better-commit-messages" rel="bookmark" title="Better commit messages">Better commit messages</a></h2>
+    <!-- This is the date and author -->
+    <small>April 26, 2013 by Daniel Hoelbling</small>
+    <div class="entry">
+        <p>Caleb Thompson:</p>
+
+<blockquote>
+  <p>Answer the following questions:</p>
+
+  <ul>
+    <li>Why is this change necessary?</li>
+    <li>How does it address the issue?</li>
+    <li>What side effects does this change have?</li>
+  </ul>
+</blockquote>
+
+    </div>
+    <p class="postmetadata">
+        <a href="/better-commit-messages#comments"
+            title="Comment on Better commit messages"><span
+                class="dsq-postid" rel=" http://www.tigraine.at/better-commit-messages/">View
+                Comments</span> </a>
+    </p>
+
+    <!-- Disqus Comment System -->
+    <a name="comments" />
+    <div id="disqus_thread">
+        <div id="dsq-content">
+        </div>
+    </div>
+    <ul id="dsq-comments">
+    </ul>
+    <script type="text/javascript">
+        var disqus_url = 'http://www.tigraine.at/better-commit-messages/ ';
+        var disqus_identifier = ' http://www.tigraine.at/better-commit-messages/';
+        var disqus_container_id = 'disqus_thread';
+        var disqus_domain = 'disqus.com';
+        var disqus_shortname = 'tigraine';
+        var disqus_title = "Better commit messages";
+        var disqus_config = function () {
+            var config = this; // Access to the config object
+
+            /* 
+            All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+            */
+
+            config.callbacks.preData.push(function () {
+                // clear out the container (its filled for SEO/legacy purposes)
+                document.getElementById(disqus_container_id).innerHTML = '';
+            });
+            config.callbacks.onReady.push(function () {
+                // sync comments in the background so we don't block the page
+                DISQUS.request.get('?cf_action=sync_comments&post_id=956');
+            });
+        };
+    </script>
+    <script type="text/javascript">
+        var DsqLocal = {
+            'trackbacks': [],
+        };
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.' + disqus_domain + '/embed.js?pname=wordpress&pver=2.50';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <!-- End of Disqus Comment System -->
+</div>
+
                 <br />
                 <br />
             </div>
