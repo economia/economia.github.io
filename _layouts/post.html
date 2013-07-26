@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<article class=hentry>
+
+<header>
+{% if page.link %}
+<h1><a class=entry-title href="{{ page.link | escape }}">{{ page.title }}</a>&nbsp;→</h1>
+{% else %}
+<h1 class=entry-title>{{ page.title }}</h1>
+{% endif %}
+
+<p class="byline author vcard instapaper_ignore entry-unrelated">
+  {% unless page.link %}
+  By <a href="/" rel=author class=fn lang=hr>Mislav Marohnić</a>
+  {% endunless %}
+  {% if page.updated %}
+  on <time class=published datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
+  <time class=updated datetime="{{ page.updated }}"></time>
+  {% else %}
+  on <time class=updated datetime="{{ page.date | date_to_xmlschema }}" pubdate>{{ page.date | date_to_string }}</time>
+  {% endif %}
+</p>
+</header>
+
+<div id="post" class="entry-content{% if page.link %} link{% endif %}">
+  {{ content }}
+</div>
+
+</article>
+
+<aside id="related">
+  {% unless page.link %}
+  <h2>Also on this site</h2>
+  
+  <ol class="posts">
+    {% for related in site.posts %}
+      {% if related.url != page.url and related.link == null and (void == null or void != '2') %}
+      <li>
+        <span class="date">{{ related.date | date_to_string }}</span>
+        ▸ <a href="{{ related.url }}">{{ related.title }}</a>
+      </li>
+      {% capture void %}{% increment related_shown %}{% endcapture %}
+      {% endif %}
+    {% endfor %}
+  </ol>
+  {% endunless %}
+  
+  <p>
+  You should <a href="http://twitter.com/mislav" rel="me">follow me on Twitter: @mislav</a>.
+  </p>
+  
+  <nav><a class="home" href="/blog/">← all posts</a></nav>
+</aside>
