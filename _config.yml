@@ -1,0 +1,6 @@
+markdown: kramdown
+pygments: true
+permalink: /:title
+exclude:
+- params.json
+- rakefile
