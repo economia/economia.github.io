@@ -1,29 +1,32 @@
 ---
-title: "První příspěvek"
+title: "Vývojářský blog?"
 description: >
-  No co vám budu povídat, mlostivá paní!
+  Ano, čtete dobře, další vývojářský blog. Tentokrát od lidí, co dělají
+  redakční technologie v IHNED.cz.
 layout: post
-categories: obecné
-styles: |
-  p code.file { background: none; padding: 0; color: #666 }
-  td, th { vertical-align:top; text-align:left }
-  th { padding:.1em .3em .1em 0 }
-  th kbd, td kbd { font-size:.8em; font-weight:normal }
-  table { border-collapse: collapse; margin: 1.2em 0 1.2em 1.5em }
-  @media only screen and (max-width: 480px) {
-    table { margin: 1em 0 }
-  }
-  table { font-family: "Minion Pro", "Palatino", "Hoefler Text", "Times New Roman", serif }
-  table thead { cursor:default }
-  table thead { text-transform: uppercase }
-  table.split tbody th { font-weight: normal }
-  table.split th, table.split td { padding: .1em .4em }
-  table.split thead tr { border-bottom: 1px solid silver }
-  table.split th, table.split td { border-right: 1px solid silver }
-  table.split th:last-child, table.split td:last-child { border:none }
-  table tr:nth-child(2n) { background:#eef }
-  table td strong { color: darkred }
-  ins { font-style: italic }
+category: obecne
 ---
 
-Lorem ipsum, vole, příšerný kůň...
+Tak určitě, není to žádná převratná myšlenka, vždyť jich je dvanáct do tuctu.
+Proč tedy další? A kdo vůbec jsme?
+
+Jsme lidi, co připravují v Economii nejrůznější speciály a redakční nástroje pro [IHNED.cz][ihned]. Ne, naší starostí
+není redakční systém, my se nestaráne ani o sociální sítě ani o moderaci komentářů. Naši práci uvidíte především na
+nestandardních "pikoškách", jako je třeba [Mapa moci](http://ihned.cz/mapamoci) nebo [Zemanova vláda](http://ihned.cz/zemanovavlada).
+
+Naše práce je specifická tím, že děláme "rychloobrátkové zboží". Nemáme na každou věc týdny času. Většina vizualizací vzniká v řádu několika málo dnů, kdy je potřeba všechno připravit, napsat a publikovat. Výsledek musí být funkční a pochopitelný, ale nemusí být naprosto perfektní, stačí *good enough*. Primárním cílem naší práce je *exekuce* - tedy dotáhnout věc do konce a publikovat ji. Na druhou stranu nás nemusí pálit dlouhodobé rozvíjení jedné služby...
+
+Takový styl práce má svoje specifika. Věci musí být jednoduché, rychle napsané, i za cenu hacků, ale na druhou stranu musí být znovupoužitelné, takže pokud možno univerzální. Když máme možnost něco "napráskat" rychle v nějaké knihovně, tak to uděláme, i když to nebude stoprocentní - ale pokud si máme vybrat mezi vypiplaným řešením, které budeme psát dva týdny, a funkčním řešením, co máme za dva dny venku, bereme vždy to druhé.
+
+Při práci používáme především JavaScript a jeho knihovny. [jQuery](http://jquery.com/), [D3](http://d3js.org/), [Leaflet](http://leafletjs.com/), to je náš denní chleba. K tomu třeba [Twitter Bootstrap](http://twitter.github.io/bootstrap/). Sledujeme samozřejmě novinky v oboru - poslední věc, na kterou jsme se koukali, je [Bower](http://bower.io/). Místo JavaScriptu někteří používají [LiveScript](http://livescript.net/), čisté CSS nahrazují [Stylusem](http://learnboost.github.io/stylus/)... Testujeme v [qUnit](http://qunitjs.com/) a používáme [Live Reload](http://livereload.com/). Verzujeme Gitem a používáme k tomu GitHub a BitBucket.
+
+Na serverech používáme taky různé technologie. Něco v Pythonu, něco v PHP, kolegové "dataři" mají na své experimenty v jazyce R spuštěný Shiny server... Před tím vším jsou předsazené proxy na nginx. Databáze je jednak klasická MySQL, ale na některé věci se nám víc hodí [Redis]() nebo [neo4j](http://www.neo4j.org/).
+
+Většina z nás píše v [Sublime Text 2](sublimetext.com), který jsme si *vytunili* pár pluginy, což by mohlo být téma na příští zápisek.
+
+O čem tady budeme psát? O věcech, na které jsme přišli při práci, o zajímavých technologiích, které jsme objevili, o nápadech, co šly okolo, a v neposlední řadě o našich vlastních knihovnách, které nám vzniknou pod rukama a které dáme ven k použití (pod nějakou BSD-like licencí, nebojte se GPL).
+
+Doufám, že to bude i pro vás zajímavé čtení.
+
+
+[ihned]: http://ihned.cz "Zpravodajský server Hospodářských novin"

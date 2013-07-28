@@ -4,3 +4,4 @@ permalink: /:title
 exclude:
 - params.json
 - rakefile
+- build.bat
