@@ -38,4 +38,6 @@ Po odhalení příčiny jsme server okamžitě nahodili a hlasování dojelo už
 
 Ve špičce jsme měli připojeno 1600 uživatelů najednou. Nakonec to, díky politickým zákulisním hrám, nebyla tak jednoznačná záležitost, jak jsme si představovali, takže sledování ručičky bylo docela dramatické. Systém zvládl i výpadek jednoho serveru, což je dobrá zpráva. (Ano, víme, byla to školácká chyba, ale komu se nikdy taková nestala, ať první hodí monitorem!) Pro příště víme, že to zvládneme, a taky že nesmíme zapomenout na ulimit!
 
+Pro zájemce [zdroják ke stažení](/dl/rusnometr.zip)
+
 [ihned]: http://ihned.cz "Zpravodajský server Hospodářských novin"
