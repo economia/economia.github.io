@@ -11,10 +11,10 @@ layout: default
         {{content}}
     </div>
 
-    <p>{% for category in site.categories %}
-            <a href="/{{ category | first | slugize }}/">
+    <p>{% for category in post.categories %}
+            <a href="/{{ category | first | slugize }}.html">
                 {{ category | first }}
-            </a>
+            </a> &nbsp;
         {% endfor %}
     </p>
     <p class="postmetadata">
