@@ -10,6 +10,13 @@ layout: default
     <div class="entry">
         {{content}}
     </div>
+
+    <p>{% for category in site.categories %}
+            <a href="/{{ category | first | slugize }}/">
+                {{ category | first }}
+            </a>
+        {% endfor %}
+    </p>
     <p class="postmetadata">
         <a href="{{page.url}}#comments"
             title="Comment on {{page.title}}"><span
