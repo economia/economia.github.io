@@ -8,7 +8,7 @@ layout: nil
   </url>
 	{% for post in site.posts %}
   <url> 
-    <loc>http://www.tigraine.at{{post.id}}/</loc> 
+    <loc>http://economia.github.io{{post.id}}/</loc> 
   </url>
 	{% endfor %}
 </urlset>
