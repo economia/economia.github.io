@@ -11,9 +11,9 @@ layout: default
         {{content}}
     </div>
 
-    <p>{% for category in post.categories %}
-            <a href="/{{ category | first | slugize }}.html">
-                {{ category | first }}
+    <p>Kategorie: {% for category in page.categories %}
+            <a href="/{{ category| slugize }}.html">
+                {{ category | capitalize }}
             </a> &nbsp;
         {% endfor %}
     </p>
