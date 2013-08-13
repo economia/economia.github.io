@@ -1,7 +1,7 @@
 ---
 title: "Console v IE8"
 description: >
-  Zapomenutý *console.log()* dokáže napáchat pěknou paseku v IE, a co hůř - špatně se hledá!
+  Zapomenutý console.log() dokáže napáchat pěknou paseku v IE, a co hůř - špatně se hledá!
 layout: post
 category: javascript
 ---
