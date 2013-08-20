@@ -21,7 +21,7 @@ Dokáže zarovnat víc řádků pod sebou nejen podle prvního znaku, ale třeba
 
 ##All Autocomplete
 
-Automatické doplňování textu
+Automatické doplňování textu ze všech otevřených souborů
 
 ##Clipboard History
 
