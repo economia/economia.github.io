@@ -1,12 +1,18 @@
 html, body {
   height: 100%;
 }
+html {
+  width:960px;
+  background-color:white;
+  margin:0 auto;
+}
 body {
   background: white url(images/back.png) 0 repeat-x;
   color: #1A2B3B;
   text-align: left;
-  font-family: alegreya, serif;
+/*  font-family: alegreya, serif;*/
   font-size: 14px;
+  line-height:25px;
   padding: 0px;
   min-height: 100%;
   _height: 100%;
