@@ -3,7 +3,7 @@ title: "Pár švestiček ze zahrádky"
 description: >
   Ovocnářství Hujer nabízí... zdrojové kódy!
 layout: post
-category: obecne
+category: opensource
 ---
 
 Naši dataři (pardon, správně to je [Datablog](http://ihned.cz/data/) portálu [IHNED.cz](http://ihned.cz/)) zastávají postoj: *Získáváme veřejně dostupná data, snažíme se, aby data byla otevřená, šťouráme do státu, aby je zveřejnil, takže je logické, že my je zveřejníme taky i se skripty.*
