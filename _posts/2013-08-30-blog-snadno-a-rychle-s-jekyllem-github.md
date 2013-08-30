@@ -54,4 +54,4 @@ Publikování pak proběhne pomocí trojice git add / git commit / git push. O v
 
 Obrázky stačí umístit do adresáře a odkázat na ně - když je nezapomenete zahrnout do commitu, tak se zkopírují jak jsou na výsledné stránky.
 
-Je to trošku jiný přístup než s hostovaným blogovacím nástrojem, je to zhruba o úroveň níž, ale na náš záměr je to dostatečné. Navíc práce s Gitem je naším denním chlebem.
+Je to trošku jiný přístup než s hostovaným blogovacím nástrojem, je to zhruba o úroveň níž, ale na náš záměr je to dostatečné. Navíc práce s Gitem je naším denním chlebem. Navíc, proč to nepřiznat, je to i *geekovina*. Ale je to především jednoduché, rychlé a "developers-friendly".
