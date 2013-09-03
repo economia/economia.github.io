@@ -594,7 +594,7 @@ p code {
 }
 
 x-tweetable {position: relative;}
-x-tweetable a { text-decoration: none; border-bottom: 0px dotted #4099ff; color: #333; background: whitesmoke; }
+x-tweetable a, x-tweetable a:visited { text-decoration: none; border-bottom: 0px dotted #4099ff; color: #333; background: whitesmoke; }
 x-tweetable a:hover { text-decoration: none; border-bottom: 0px dotted #4099ff; color: #4099ff;}
 x-tweetable .icon-twitter {color:#4099ff;}
 .sharebuttons {display: none; position: absolute; top: -30px; left: 0px; z-index: 101;  width: 100px; background: #4099ff; color: whitesmoke; border-radius: 3px; height: 20px; padding: 5px; text-align: center; font-family: 'helvetica neue', helvetica, arial, sans-serif; font-size: 14px; font-weight: bold; }
