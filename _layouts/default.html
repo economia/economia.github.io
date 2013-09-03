@@ -154,7 +154,7 @@
     </script>
     <script>
     $(document).ready(function(){
-        $("tweetable").replaceWith(function() {
+        $("x-tweetable").replaceWith(function() {
             var content = $(this).html();
             var tweetContent = content;
             var alt = $(this).attr("title");
@@ -162,7 +162,7 @@
             var hash = $(this).attr("data-hash");
             if (hash) {tweetContent += " #"+hash;}
 
-            var out = "<span class=tweetable>";
+            var out = "<x-tweetable>";
             var permalink = document.location.href;
             out += "<a href='https://twitter.com/intent/tweet?original_referer="+encodeURIComponent(permalink)+"&source=tweetbutton&text="+
                 encodeURIComponent((tweetContent))+"&url="+encodeURIComponent(permalink)+"'>"+content+"&thinsp;<i class='icon-twitter'></i>";
@@ -175,12 +175,12 @@
 
 
             out += "</span>";
-            out += "</span>";
+            out += "</x-tweetable>";
 
             return out;
         });
 
-        $(".tweetable").hover(
+        $("x-tweetable").hover(
             function(){
                   if ($(this).data('vis') != true) {
                           $(this).data('vis', true);
