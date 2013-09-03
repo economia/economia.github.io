@@ -10,7 +10,7 @@ Znáte to - po zuřivém ladění vám zůstane někde v kódu zapomenutý ladic
 
 Přijdete, koukáte - a vidíte: Má IE8. Hmmm, nějaký problém s kompatibilitou. Spustíte tedy konzoli, načtete znovu - a vida, už to jede! Tak to vidíte, asi se něco špatně načetlo, zmáčkněte F5!
 
-Jenže pak se to stane i dalšímu, a dalšímu, a vás přestane bavit chodit od čerta k ďáblu a spouštět konzole, a začnete přemýšlet, čím to asi může být. "Špatným načtením" to není. Zmizí to, když spustíte konzoli. Aha. AHA! On totiž IE8 nemá objekt *console*, dokud tu konzoli neotevřete!
+Jenže pak se to stane i dalšímu, a dalšímu, a vás přestane bavit chodit od čerta k ďáblu a spouštět konzole, a začnete přemýšlet, čím to asi může být. "Špatným načtením" to není. Zmizí to, když spustíte konzoli. Aha. AHA! <tweetable title="Podivuhodnou chybu může někdy způsobit zapomenutý console.log()">On totiž IE8 nemá objekt *console*, dokud tu konzoli neotevřete!</tweetable>
 
 Pomoc je snadná - vyházejte všechny console.log, na produkčním webu nemají co dělat.
 

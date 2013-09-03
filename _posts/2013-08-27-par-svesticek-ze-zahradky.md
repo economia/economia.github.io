@@ -8,7 +8,7 @@ category: opensource
 
 Naši dataři (pardon, správně to je [Datablog](http://ihned.cz/data/) portálu [IHNED.cz](http://ihned.cz/)) zastávají postoj: *Získáváme veřejně dostupná data, snažíme se, aby data byla otevřená, šťouráme do státu, aby je zveřejnil, takže je logické, že my je zveřejníme taky i se skripty.*
 
-Proto jsme se dohodli, že všechno, na čem nestojí náš "core business", vydáme pod nějakou otevřenou licencí. Jako nejvhodnější pro účely datové žurnalistiky se ukazuje licence [CC BY-NC-SA 3.0 CZ](http://creativecommons.org/licenses/by-nc-sa/3.0/cz/), tedy vždy uveďte autora, nevyužívejte dílo ani přidružená data komerčně a zachovejte licenci.
+Proto jsme se dohodli, že <tweetable title="Všechno, co na IHNED vzniká v rámci datové žurnalistiky, vydávají pod otevřenou licencí." data-hash="opensource">všechno, na čem nestojí náš "core business", vydáme pod nějakou otevřenou licencí</tweetable>. Jako nejvhodnější pro účely datové žurnalistiky se ukazuje licence [CC BY-NC-SA 3.0 CZ](http://creativecommons.org/licenses/by-nc-sa/3.0/cz/), tedy vždy uveďte autora, nevyužívejte dílo ani přidružená data komerčně a zachovejte licenci.
 
 My z vývoje redakčních technologií občas přispějeme nějakou vizualizací v JavaScriptu (nebo LiveScriptu) nad daty, co připravila redakce. V takovém případě použijeme [licenci  MIT](http://cs.wikipedia.org/wiki/Licence_MIT). 
 

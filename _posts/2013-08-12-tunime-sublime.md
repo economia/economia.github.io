@@ -8,7 +8,7 @@ category: sublime
 
 [Sublime Text 2](http://www.sublimetext.com/) je, věřte nebo ne, opravdu nejlepší textový editor pro vývojáře a kodéry. Rychlý, lehký a snadno upravitelný pomocí obří sady pluginů. Pokud jste zvyklí pracovat s IDE (Borland Pascal... ehm... tedy... Visual Studio, NetBeans, Eclipse, WebStorm, ...), bude vám Sublime připadat strohý, ale ten, kdo si až dosud vystačil s (výborným) PSPadem, může shledat Sublime zajímavým.
 
-Po instalaci je potřeba nainstalovat jako úplně první věc [Package Manager](https://sublime.wbond.net/installation#st2). Ten pak řídí stahování a instalaci dalších pluginů. Stačí stisknout Ctrl+Shift+P, napsat "Install packages", a pak už jen vybírat. Co jsme si nainstalovali my?
+Po instalaci je potřeba nainstalovat jako úplně první věc [Package Manager](https://sublime.wbond.net/installation#st2). Ten pak řídí stahování a instalaci dalších pluginů. Stačí stisknout Ctrl+Shift+P, napsat "Install packages", a pak už jen vybírat. <tweetable title="Pár tipů na pluginy pro Sublime Text 2">Co jsme si nainstalovali my?</tweetable>
 
 
 ##Theme - Nil

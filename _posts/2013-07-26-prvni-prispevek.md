@@ -26,7 +26,7 @@ Většina z nás píše v [Sublime Text 2](sublimetext.com), který jsme si *vyt
 
 O čem tady budeme psát? O věcech, na které jsme přišli při práci, o zajímavých technologiích, které jsme objevili, o nápadech, co šly okolo, a v neposlední řadě o našich vlastních knihovnách, které nám vzniknou pod rukama a které dáme ven k použití (pod nějakou BSD-like licencí, nebojte se GPL).
 
-Doufám, že to bude i pro vás zajímavé čtení.
+<tweetable title="Vývojáři z redakce IHNED.cz mají vlastní blog">Doufám, že to bude i pro vás zajímavé čtení.</tweetable>
 
 
 [ihned]: http://ihned.cz "Zpravodajský server Hospodářských novin"
