@@ -156,15 +156,21 @@
     $(document).ready(function(){
         $("ins").replaceWith(function() {
             var content = $(this).html();
+            var tweetContent = content;
+            var alt = $(this).attr("title");
+            if (alt) {tweetContent = alt;}
+            var hash = $(this).attr("data-hash");
+            if (hash) {tweetContent += " #"+hash;}
+
             var out = "<span class=tweetable>";
             var permalink = document.location.href;
             out += "<a href='https://twitter.com/intent/tweet?original_referer="+encodeURIComponent(permalink)+"&source=tweetbutton&text="+
-                encodeURIComponent((content))+"&url="+encodeURIComponent(permalink)+"'>"+content+"&thinsp;<i class='icon-twitter'></i>";
+                encodeURIComponent((tweetContent))+"&url="+encodeURIComponent(permalink)+"'>"+content+"&thinsp;<i class='icon-twitter'></i>";
             out += "</a>";
             out += "<span class='sharebuttons'>";
 
             out += "<a href='https://twitter.com/intent/tweet?original_referer="+encodeURIComponent(permalink)+"&source=tweetbutton&text="+
-                encodeURIComponent((content))+"&url="+encodeURIComponent(permalink)+"'>TWEETNOUT";
+                encodeURIComponent((tweetContent))+"&url="+encodeURIComponent(permalink)+"'>TWEETNOUT";
             out += "</a>";
 
 
