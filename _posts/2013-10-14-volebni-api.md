@@ -9,7 +9,7 @@ category: obecne
 
 Od začátku oddělení redakčního vývoje se snažíme vše, co vyprodukujeme, taky [zveřejňovat](https://github.com/economia) pod otevřenou licencí. S blížícími se volbami programujeme kalkulačku průběžných výsledků, která vychází z dat zveřejňovaných ČSÚ na volby.cz. I tu najdete mezi našimi projekty - viz [Volební moduly](https://github.com/economia/volebni-moduly). Abyste ji však nemuseli zprovozňovat sami, spustíme před volbami veřejné API s již spočítanými výsledky. Konkrétní datum spuštění a finální endpointy včas oznámíme na [našem twitteru](https://twitter.com/vyvojIHNED), zatím pro vás máme specifikaci a ukázkové výstupy na základě dat z voleb 2010.
 
-<iframe src="http://datasklad.ihned.cz/volebni-api/" width="620" height="650" frameborder="0"></iframe>
+[Popis API](http://datasklad.ihned.cz/volebni-api/)
 
 Co použitím našeho API získáte nad strojově čitelnými daty z Volby.cz? Především to bude průběžný výpočet složení sněmovny včetně preferenčních hlasů, které ČSÚ zveřejní až po sečtení všech výsledků. Také budeme mít k dispozici "mediální" server ČSÚ, který je oddělený od veřejného, takže i pokud volby.cz "spadnou", naše API bude fungovat dál.
 
