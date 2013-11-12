@@ -24,4 +24,4 @@ Padlo tedy rozhodnutí vytvořit další server ručně. Naštěstí toto mají 
 
 Jak bych tedy shrnul řešení? Mít tak půlden vývoje navíc, kdy bychom otestovali, jak funguje loadbalancing se Socket.io a připravili si image systému, pak by vše proběhlo tak, jak jsme si to plánovali. Takhle jsme sice měli pár infarktových momentů, servery (jak Azure tak Node) nás ale podržely a ve výsledku jsme byli schopni s minimálními náklady obsloužit téměř všechny požadavky. Což, pro představu, bylo za to jedno sčítací odpoledne něco přes 300GB.
 
-(Marcel Šulek)
+*Marcel Šulek*
