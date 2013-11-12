@@ -469,6 +469,9 @@ a:hover, a:active {
   color: #1A9829;
   text-decoration: underline;
 }
+.post .entry h2 a, .post .entry h2 a:visited {
+  text-decoration: underline;
+}
 #blog_name a {
   color: #FFFFFF;
   text-decoration: none;
