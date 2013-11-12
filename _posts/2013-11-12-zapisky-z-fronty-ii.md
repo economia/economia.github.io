@@ -6,7 +6,7 @@ layout: post
 category: obecne
 ---
 
-Kvůli volbám jsme si naprogramovali řadu užitečných utilit. Spousta se jich zase čtyři roky nebude hodit, ale pár kousků je přeci jen univerzálnějších. Nyní konečně bylo trochu času projít repozitáře, dopsat readme a dát je k dispozici světu.
+Kvůli volbám jsme si naprogramovali řadu užitečných utilit. Spousta se jich zase čtyři roky nebude hodit, ale pár kousků je přeci jen univerzálnějších. Nyní konečně bylo trochu času projít repozitáře, dopsat readme a dát je k dispozici světu (nadpisy vedou na příslušné repozitáře).
 
 ## [Volební moduly](https://github.com/economia/volebni-moduly)
 
