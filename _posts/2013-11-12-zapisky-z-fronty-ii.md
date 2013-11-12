@@ -22,6 +22,6 @@ Převodník SVG obrázku na mapové podklady použitelné jako vrstva v Leafletu
 
 ## [Package & Response](https://gist.github.com/veproza/7433985)
 
-[Minule jsem psal](zapisky-z-fronty) o zátěži, kterou naše servery ustály. Kromě extrémně rychlé architektury Node na tom nesla svůj podíl naše in-memory cache, Package. Využili jsme specifika zpravodajského webu, totiž že drtivá většina požadovaného obsahu (daleko přes 99%) je představuje pouze pár kilobajtů dat a tak jsme si tato data vždy připravili, gzipovali a až do jejich invalidace je servírovali všem, kdo si o ně řekli. Jak vypadala naše již druhá implementace této metody (první byla u Hatecloudu) se můžete podívat v [Gistu](https://gist.github.com/veproza/7433985). Zároveň tam najdete i třídu zastřešující pár convenience metod pro HTTP request, se kterou Package spolupracuje.
+[Minule jsem psal](/zapisky-z-fronty) o zátěži, kterou naše servery ustály. Kromě extrémně rychlé architektury Node na tom nesla svůj podíl naše in-memory cache, Package. Využili jsme specifika zpravodajského webu, totiž že drtivá většina požadovaného obsahu (daleko přes 99%) je představuje pouze pár kilobajtů dat a tak jsme si tato data vždy připravili, gzipovali a až do jejich invalidace je servírovali všem, kdo si o ně řekli. Jak vypadala naše již druhá implementace této metody (první byla u Hatecloudu) se můžete podívat v [Gistu](https://gist.github.com/veproza/7433985). Zároveň tam najdete i třídu zastřešující pár convenience metod pro HTTP request, se kterou Package spolupracuje.
 
 *Marcel Šulek*
