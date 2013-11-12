@@ -16,6 +16,8 @@ Kolekce skriptů pro stažení volebních výsledků ze serveru [ČSÚ](http://v
 
 Generátor SVG, který byl podkladem pro naše [volební mapy](http://data.blog.ihned.cz/c1-61086960-jak-se-zmenila-politicka-mapa-republiky-vysledky-snemovnich-voleb-v-kazde-obci-od-roku-1996-do-vcerejska). Pokud vás zajímá, jestli někde volili Pravý Blok nebo kde Okamura porazil Babiše, určitě se mrkněte.
 
+Kromě vizualizace vás ještě může zaujmout složka data. Jsou v ní v jednotném formátu výsledky všech parlamentních voleb od roku 1996 (pro popis formátu viz readme repozitáře) a TopoJSON obcí ČR s jejich ID dle [Struktury území ČSÚ](http://www.czso.cz/csu/klasifik.nsf/i/ii_struktura_uzemi_ceske_republiky) v různých úrovních zjednodušení.
+
 ## [SVG Mapper](https://github.com/economia/svg-mapper)
 
 Převodník SVG obrázku na mapové podklady použitelné jako vrstva v Leafletu nebo Google Maps. Díky němu jsme převedli vizualizaci výsledků (což bylo 9MB velké SVG, jehož vykreslení trvá i na výkonném PC 5-10 vteřin) na stovky mapových dlaždic různé úrovně přiblížení, které jdou zobrazit za pár stovek milisekund a kilobajtů. Protože nám přišel jako užitečný pro komunitu i za hranicemi naší republiky, je k němu zpracován poměrně podrobný manuál v angličtině.
